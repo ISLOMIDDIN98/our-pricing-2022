@@ -21,8 +21,23 @@
 
   <main class="main-content">
     <div class="container page">
-     <h1 class="page-title">Our Pricing</h1>
-<div style="padding-bottom: 64px;">Switch</div>
+      <h1 class="page-title">Our Pricing</h1>
+      <form class="pricing-switch" action="https://echo.htmlacademy.ru" method="Get">
+        <div class="Switch">
+          <input class="switch-input-annual visually-hidden" type="radio" name="payment_period" value="annual" id="annual-payment-radio">
+          <input class="switch-input-monthly visually-hidden" type="radio" name="payment_period" value="monthly" id="monthly-payment-radio">
+          <label class="switch-label" for="annual-payment-radio">Annually</label>
+          <div class="switch-control">
+<div class="switch-circle">
+  <label class="switch-control-annual" for="annual-payment-radio"></label>
+  <label class="switch-control-monthly" for="monthly-payment-radio"></label>
+</div>
+          </div>
+          <label class="switch-label" for="monthly-payment-radio">Monthly</label>
+        </div>
+      </form>
+
+
       <section class="pricing">
         <h2 class="visually-hidden">pricing</h2>
         <div class="pricing-inner">
@@ -39,6 +54,7 @@
             </ul>
             <a class="button button-block button-primary" href="#">Learn more</a>
           </section>
+
           <section class="pricing-plan pricing-plan-best">
             <h3 class="pricing-plan-title">Professional</h3>
             <div class="pricing-plan-price">
@@ -52,6 +68,7 @@
             </ul>
             <a class="button button-block button-white" href="#">Learn more</a>
           </section>
+
           <section class="pricing-plan">
             <h3 class="pricing-plan-title">Master</h3>
             <div class="pricing-plan-price">
