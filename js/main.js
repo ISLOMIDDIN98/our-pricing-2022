@@ -1,8 +1,29 @@
-const Dollor = document.querySelector('.box-how-much');
+const elsPaymentPeriodRadio = document.querySelectorAll('[name="payment_period"]');
+const elsPricingPlanValue = document.querySelectorAll('.pricing-plan-value');
 
-const Button = document.querySelector('.site-top-buttons');
+elsPaymentPeriodRadio.forEach(function(elPaymentPeriodRadio){
+  elPaymentPeriodRadio.addEventListener('change', function (){
 
-Button.addEventListener('click', function(){
+    // console.log(elPaymentPeriodRadio.value);
 
-Dollor.textContent = '99';
+    const period = elPaymentPeriodRadio.value;
+
+    // console.log(period);
+
+    // if(period === 'annual'){
+    //   console.log('yillik');
+    // }else{
+    //   console.log('oylik');
+    // }
+
+    if(period === 'annual'){
+      elsPricingPlanValue.forEach(function (elPrice) {
+        elPrice.textContent = elPrice.closest('.pricing-plan').dataset.paymentAnnual;
+      });
+    }else{
+      elsPricingPlanValue.forEach(function (elPrice) {
+        elPrice.textContent = elPrice.closest('.pricing-plan').dataset.paymentMonthly;
+      });
+    }
+  });
 });
